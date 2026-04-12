@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="light">
+
+    <div class="container">
+        <div class="top-bar">
+            <h1>AI Study Assistant</h1>
+            <button type="button" class="theme-toggle" onclick="toggleTheme()">🌙 Toggle Theme</button>
+        </div>
+
+        <form method="POST">
+            <textarea name="question" placeholder="Enter a topic or question...">{{ question or '' }}</textarea>
+
+            <div class="mode-group">
+                <label>
+                    <input type="radio" name="mode" value="explain" {% if mode == 'explain' %}checked{% endif %}>
+                    Explain
+                </label>
+
+                <label>
+                    <input type="radio" name="mode" value="summarize" {% if mode == 'summarize' %}checked{% endif %}>
+                    Summarize
+                </label>
+
+                <label>
+                    <input type="radio" name="mode" value="quiz" {% if mode == 'quiz' %}checked{% endif %}>
+                    Generate Quiz
+                </label>
+            </div>
+
+            <button type="submit" class="generate-btn">Generate</button>
+        </form>
+
+        <p class="note">If API quota is exceeded, the app runs in demo mode.</p>
+
+        {% if response %}
+        <div class="output">
+            {{ response }}
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

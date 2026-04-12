@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.light {
+    background: #f4f7fb;
+    color: #111;
+}
+
+body.dark {
+    background: #121212;
+    color: #f5f5f5;
+}
+
+.container {
+    width: 70%;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 14px;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+body.light .container {
+    background: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+body.dark .container {
+    background: #1e1e1e;
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.04);
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+body.light textarea {
+    background: #f9fafc;
+    color: #111;
+}
+
+body.dark textarea {
+    background: #2a2a2a;
+    color: #f5f5f5;
+    border: 1px solid #444;
+}
+
+.mode-group {
+    margin: 16px 0;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.mode-group label {
+    font-size: 15px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: opacity 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.generate-btn,
+.theme-toggle {
+    padding: 10px 18px;
+}
+
+body.light .generate-btn,
+body.light .theme-toggle {
+    background: #222;
+    color: #fff;
+}
+
+body.dark .generate-btn,
+body.dark .theme-toggle {
+    background: #f5f5f5;
+    color: #111;
+}
+
+.note {
+    margin-top: 14px;
+    font-size: 13px;
+    color: #777;
+}
+
+body.dark .note {
+    color: #aaa;
+}
+
+.output {
+    margin-top: 25px;
+    padding: 16px;
+    border-radius: 10px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+body.light .output {
+    background: #f9fafc;
+    border-left: 4px solid #222;
+}
+
+body.dark .output {
+    background: #2a2a2a;
+    border-left: 4px solid #f5f5f5;
+}
